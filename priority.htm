@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority check</title>
+    <style>
+        #an-id{
+            color: hotpink;   
+        }
+        .a-class{
+            color: yellow;
+        }
+        /* ID is alwys prioritized over class */
+        
+    </style>
+</head>
+<body>
+    <h1 style="color: red !important; color: blue;">Name1</h1> 
+    <!-- if you keep "! important" then that style will become priority and will work out; however you write css after that willmot work -->
+     <p class="a-class" id="an-id">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, dicta!</p>
+    
+</body>
+</html>
