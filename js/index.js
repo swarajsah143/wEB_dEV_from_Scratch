@@ -8,3 +8,8 @@ var num=rand*100;
 let dice=Math.floor(num)+1;
 
 console.log("Your love percentage is "+dice);
+
+
+12 go kapda 
+10 go chapna
+
