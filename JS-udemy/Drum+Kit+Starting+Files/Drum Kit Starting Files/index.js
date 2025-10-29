@@ -1,16 +1,23 @@
 DrumButtonNum = document.querySelectorAll(".drum").length
 for (let i = 0; i < DrumButtonNum; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", handleDrum)
+    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+        let buttonInnerHTML = this.innerHTML
+        makeSound(buttonInnerHTML);
+        addAnimation(buttonInnerHTML)
+    })
 
 
 
 }
+document.addEventListener("keypress", function(event) {
+    makeSound(event.key)
+    addAnimation(event.key)
+    // console.log(event) prints whole information about the key pressed
+    // console.log(event.key)   prints only key that is pressed
 
-function handleDrum() {
-    // console.log(this.innerHTML)   it takes inner html wherever I click 
-
-    let buttonInnerHTML = this.innerHTML   
-    switch (buttonInnerHTML) {
+});
+function makeSound(key) {
+    switch (key) {
         case "w":
             let tom2 = new Audio('sounds/tom-2.mp3')
             tom2.play()
@@ -41,6 +48,11 @@ function handleDrum() {
         default: console.log(buttonInnerHTML)
 
     }
+}
 
+function addAnimation(currentKey){
+    let animationCLass=document.querySelector("."+currentKey)
+    animationCLass.classList.add("pressed")
+    setTimeout(function(){animationCLass.classList.remove("pressed")},100)
 }
 

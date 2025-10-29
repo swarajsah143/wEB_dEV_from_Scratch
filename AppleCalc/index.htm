@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apple-Style Calculator — HTML & CSS</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --calc-bg: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      --glass: rgba(255,255,255,0.03);
+      --accent:#ff9f0a;
+      --btn:#1f2937;
+      --btn-weak:#2b3140;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --glass-border: rgba(255,255,255,0.06);
+      --radius: 28px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: radial-gradient(1200px 700px at 10% 10%, rgba(255,160,50,0.03), transparent),
+                 radial-gradient(1000px 600px at 90% 90%, rgba(80,120,255,0.02), transparent),
+                 var(--bg);
+      -webkit-font-smoothing:antialiased;
+      color:#e6eef8;
+      padding:40px;
+    }
+
+    /* Wrapper to simulate a half-screen preview look */
+    .preview-wrap{
+      width:420px; /* typical iPhone calculator width in px */
+      max-width:92vw;
+      border-radius:calc(var(--radius) - 6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      padding:20px;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Calculator shell */
+    .calculator{
+      background: var(--calc-bg);
+      border-radius:var(--radius);
+      padding:22px;
+      width:100%;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 18px 40px rgba(2,6,23,0.55);
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(6px) saturate(110%);
+    }
+
+    /* Speaker notch */
+    .notch{height:6px;width:60px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.06));margin:0 auto 12px}
+
+    /* Screen */
+    .screen{
+      min-height:88px;
+      padding:18px 18px 14px 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-end;
+      font-size:44px;
+      font-weight:500;
+      letter-spacing:0.6px;
+      color:#f8fafc;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      box-shadow: inset 0 -6px 30px rgba(0,0,0,0.4);
+      margin-bottom:18px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .screen .sub{font-size:12px;opacity:0.55;position:absolute;margin-top:8px;margin-right:12px}
+
+    /* Buttons grid */
+    .pad{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+
+    button{
+      appearance:none;
+      -webkit-appearance:none;
+      border:0;
+      outline:0;
+      height:72px;
+      border-radius:14px;
+      font-size:24px;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .08s ease, box-shadow .12s ease;
+      box-shadow: 0 6px 10px rgba(2,6,23,0.45);
+      user-select:none;
+    }
+
+    button:active{transform:translateY(2px);}
+
+    /* Special styles */
+    .btn-clear{background:linear-gradient(180deg,#636f83,#4b5566);color:#fff}
+    .btn-op{background:linear-gradient(180deg,#ffb86b,#ff9f0a);color:#0b0b0b}
+    .btn-num{background:linear-gradient(180deg,#1b2430,#161a22);color:#e6eef8}
+    .btn-dot{background:linear-gradient(180deg,#1b2430,#161a22);color:#e6eef8}
+    .btn-zero{grid-column:span 2;border-radius:18px;height:72px}
+
+    /* iPhone style glossy effect */
+    .btn-num, .btn-clear, .btn-dot{
+      background-image:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Subtle top labels (like % and +/-) */
+    .top-row{display:flex;gap:10px;justify-content:center;margin-bottom:10px}
+
+    /* Make layout responsive on narrow screens */
+    @media (max-width:420px){
+      .screen{font-size:36px;min-height:72px}
+      button{height:60px;font-size:22px}
+    }
+
+    /* Accessibility focus */
+    button:focus{box-shadow:0 8px 20px rgba(120,140,255,0.12);}
+
+  </style>
+</head>
+<body>
+  <div class="preview-wrap" role="region" aria-label="Calculator preview">
+    <div class="calculator">
+      <div class="notch" aria-hidden="true"></div>
+      <div class="screen" aria-live="polite">0</div>
+
+      <div class="pad" role="group" aria-label="Calculator keypad">
+        <button class="btn-clear" aria-label="clear">AC</button>
+        <button class="btn-clear" aria-label="plus-minus">±</button>
+        <button class="btn-clear" aria-label="percent">%</button>
+        <button class="btn-op" aria-label="divide">÷</button>
+
+        <button class="btn-num" aria-label="seven">7</button>
+        <button class="btn-num" aria-label="eight">8</button>
+        <button class="btn-num" aria-label="nine">9</button>
+        <button class="btn-op" aria-label="multiply">×</button>
+
+        <button class="btn-num" aria-label="four">4</button>
+        <button class="btn-num" aria-label="five">5</button>
+        <button class="btn-num" aria-label="six">6</button>
+        <button class="btn-op" aria-label="minus">−</button>
+
+        <button class="btn-num" aria-label="one">1</button>
+        <button class="btn-num" aria-label="two">2</button>
+        <button class="btn-num" aria-label="three">3</button>
+        <button class="btn-op" aria-label="plus">+</button>
+
+        <button class="btn-num btn-zero" aria-label="zero">0</button>
+        <button class="btn-dot" aria-label="dot">.</button>
+        <button class="btn-op" aria-label="equals">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
