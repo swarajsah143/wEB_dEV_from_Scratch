@@ -13,4 +13,7 @@ for (let index = 0; index < prices.length; index++) {
     
 }
 console.log(prices)
+// prices.unshift("Initial")   add to the inital of an array
+// prices.shift()   remove the first element of an array 
+
 console.log(prices.toString())
