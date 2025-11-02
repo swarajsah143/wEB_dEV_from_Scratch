@@ -23,8 +23,10 @@
 // const arrowSum=(a,b)=> console.log(a+b);
 // arrowSum(3,5)
 
-const printFunction = () => {
-    console.log("hello")
+// const printFunction = () => {
+//     console.log("hello")
 
-}
-printFunction()
+// }
+// printFunction()
+
+alert("This is the second one ")

@@ -60,10 +60,11 @@
 
 
 
-let marks=[67,88,97,87,93,91,70,67,99]
-let toppers=marks.filter((value)=>{
-    return value>80
+// let marks=[67,88,97,87,93,91,70,67,99]
+// let toppers=marks.filter((value)=>{
+//     return value>80
     
-})
-console.log(toppers)
+// })
+// console.log(toppers)
 
+// alert("This is 1st one ")

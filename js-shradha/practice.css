@@ -1,0 +1,13 @@
+body{
+    background-color: grey;
+    color: white;
+    font-weight: bolder;
+}
+.large-box{
+    height: 250px;
+    width: 150px;
+    background-color: yellow;
+}
+ol li{
+    color: black;
+}
