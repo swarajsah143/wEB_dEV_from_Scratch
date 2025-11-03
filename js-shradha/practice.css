@@ -11,3 +11,12 @@ body{
 ol li{
     color: black;
 }
+.para{
+    font-size: 2rem;
+    color: rgb(19, 18, 18);
+}
+.newPara{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(202, 37, 37);
+}   

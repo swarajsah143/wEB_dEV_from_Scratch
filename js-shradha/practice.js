@@ -14,11 +14,18 @@
 
 let newBtn=document.createElement("button")
 newBtn.innerText="Click me"
+newBtn.style.background="red"
+newBtn.style.color="white"
+
 console.log(newBtn.innerText)
 
-let div=document.querySelector("div")
-div.append(newBtn)
+let body=document.querySelector("body")
+body.prepend(newBtn)
+
+let newClass=document.querySelector("p").classList.add('newPara')   // Here we have added another class inside paragraph  so 2 classes are there
+
 // node.append(newBtn)
 // let box1=document.querySelectorAll(".box")[0].innerText="I am box 1"
 // let box2=document.querySelectorAll(".box")[1].innerText="I am box 2"
 // let box3=document.querySelectorAll(".box")[2].innerText="I am box 3"
+pa
