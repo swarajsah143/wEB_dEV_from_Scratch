@@ -28,4 +28,15 @@ let newClass=document.querySelector("p").classList.add('newPara')   // Here we h
 // let box1=document.querySelectorAll(".box")[0].innerText="I am box 1"
 // let box2=document.querySelectorAll(".box")[1].innerText="I am box 2"
 // let box3=document.querySelectorAll(".box")[2].innerText="I am box 3"
-pa
+
+let circle=document.createElement("div")
+let addUnder=document.querySelector("button")
+addUnder.after(circle)
+circle.innerText="Hey I am added through js"
+circle.style.height="80px"
+circle.style.width="80px"
+circle.style.backgroundColor="yellow"
+circle.style.color="black"
+circle.style.borderRadius="50%"
+circle.style.textAlign="center"
+circle.style.overflow="hidden"
