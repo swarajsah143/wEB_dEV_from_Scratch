@@ -7,6 +7,7 @@ body{
     height: 250px;
     width: 150px;
     background-color: yellow;
+    color: black;
 }
 ol li{
     color: black;
@@ -20,3 +21,12 @@ ol li{
     font-weight: bolder;
     color: rgb(202, 37, 37);
 }   
+#doubleClick{
+    background-color: rgb(226, 30, 30);
+    color: rgb(255, 243, 243);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 50px;
+    padding: 15px;
+}

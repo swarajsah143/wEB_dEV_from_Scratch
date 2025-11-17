@@ -40,3 +40,10 @@ circle.style.color="black"
 circle.style.borderRadius="50%"
 circle.style.textAlign="center"
 circle.style.overflow="hidden"
+
+
+let doubleClick=document.getElementById("doubleClick")
+doubleClick.ondblclick=()=>{
+    alert("You Clicked twice");
+    console.log("2x")
+}
