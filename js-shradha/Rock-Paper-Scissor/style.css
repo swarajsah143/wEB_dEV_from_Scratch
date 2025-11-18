@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(211, 177, 243);
+}
+
+.container{
+    height: 50vmin;
+    width: 90vmin;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.msg-box{
+    margin-top: 60px;
+    display: inline-flex;
+    gap: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+
+
+}
+.reset-btn{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+.game{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+.result{
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+}
+.box{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: none;
+    /* background-color: aquamarine; */
+    
+}
+.winMsg{
+    color: rgb(7, 148, 37);
+    
+}
+.lossMsg{
+    color: rgb(235, 11, 11);
+}
+#rock{
+    background-image: url(/images/rock.png);
+    background-size: cover;
+    background-position: center;
+}
+#paper{
+    background-image: url(/images/paper.png);
+    background-size: cover;
+    background-position: center;
+}
+#scissior{
+    background-image: url(/images/scissors.png);
+    background-size: cover;
+    background-position: center;
+}

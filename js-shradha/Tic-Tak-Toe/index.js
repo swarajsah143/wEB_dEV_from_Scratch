@@ -1,7 +1,8 @@
 let resetBtn = document.querySelector("#reset-btn");
 let boxes = document.querySelectorAll(".box");
-let msgBox=document.querySelector(".msg-box")
+let msgBox = document.querySelector(".msg-box");
 let turn0 = "true";
+
 const winPatt = [
   [0, 1, 2],
   [0, 3, 6],
@@ -13,11 +14,11 @@ const winPatt = [
   [6, 7, 8],
 ];
 
-const disableBoxes=()=>{
-    for(let box of boxes){
-        box.disabled=true
-    }
-}
+const disableBoxes = () => {
+  for (let box of boxes) {
+    box.disabled = true;
+  }
+};
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turn0 === "true") {
@@ -39,17 +40,17 @@ const checkWinner = () => {
     let pos3Val = boxes[pattern[2]].innerText;
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
-        msgBox.innerText=`Winner is ${pos1Val}`
-        disableBoxes()
-      }
+        msgBox.innerText = `Congratulation,Winner is ${pos1Val}`;
+        disableBoxes();
+      } 
     }
   }
 };
 
-let resetBox=boxes.forEach((box) => {
+let resetBox = boxes.forEach((box) => {
   resetBtn.addEventListener("click", () => {
     box.innerHTML = "";
-    msgBox.innerText="";
-    box.disabled=false;
+    msgBox.innerText = "";
+    box.disabled = false;
   });
 });
